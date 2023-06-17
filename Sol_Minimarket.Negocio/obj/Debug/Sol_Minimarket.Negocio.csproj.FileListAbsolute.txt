@@ -1,0 +1,11 @@
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Negocio.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Negocio.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Datos.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Entidades.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Datos.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\bin\Debug\Sol_Minimarket.Entidades.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\obj\Debug\Sol_Minimarket.Negocio.csproj.AssemblyReference.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\obj\Debug\Sol_Minimarket.Negocio.csproj.CoreCompileInputs.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\obj\Debug\Sol_Minimarket.Negocio.csproj.CopyComplete
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\obj\Debug\Sol_Minimarket.Negocio.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Negocio\obj\Debug\Sol_Minimarket.Negocio.pdb

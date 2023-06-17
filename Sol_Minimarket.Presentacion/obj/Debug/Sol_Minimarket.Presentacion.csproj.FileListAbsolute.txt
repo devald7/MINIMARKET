@@ -1,0 +1,17 @@
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.csproj.AssemblyReference.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.csproj.SuggestedBindingRedirects.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.Frm_Categorias.resources
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.csproj.GenerateResource.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.csproj.CoreCompileInputs.cache
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Presentacion.exe.config
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Presentacion.exe
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Presentacion.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Entidades.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Negocio.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Entidades.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Negocio.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.csproj.CopyComplete
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.exe
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\obj\Debug\Sol_Minimarket.Presentacion.pdb
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Datos.dll
+C:\Sistemas\Sol_Minimarket\Sol_Minimarket.Presentacion\bin\Debug\Sol_Minimarket.Datos.pdb
