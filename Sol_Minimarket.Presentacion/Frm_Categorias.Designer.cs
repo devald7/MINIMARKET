@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Tbp_principal = new System.Windows.Forms.TabControl();
+            this.Tbc_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Dgv_principal = new System.Windows.Forms.DataGridView();
             this.Btn_buscar = new System.Windows.Forms.Button();
@@ -44,21 +44,22 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_reporte = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
-            this.Tbp_principal.SuspendLayout();
+            this.Btn_retornar = new System.Windows.Forms.Button();
+            this.Tbc_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Tbp_principal
+            // Tbc_principal
             // 
-            this.Tbp_principal.Controls.Add(this.tabPage1);
-            this.Tbp_principal.Controls.Add(this.tabPage2);
-            this.Tbp_principal.Location = new System.Drawing.Point(12, 12);
-            this.Tbp_principal.Name = "Tbp_principal";
-            this.Tbp_principal.SelectedIndex = 0;
-            this.Tbp_principal.Size = new System.Drawing.Size(740, 260);
-            this.Tbp_principal.TabIndex = 0;
+            this.Tbc_principal.Controls.Add(this.tabPage1);
+            this.Tbc_principal.Controls.Add(this.tabPage2);
+            this.Tbc_principal.Location = new System.Drawing.Point(12, 12);
+            this.Tbc_principal.Name = "Tbc_principal";
+            this.Tbc_principal.SelectedIndex = 0;
+            this.Tbc_principal.Size = new System.Drawing.Size(740, 260);
+            this.Tbc_principal.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -115,6 +116,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
             this.tabPage2.Controls.Add(this.Txt_descripcion_ca);
@@ -129,21 +131,25 @@
             // 
             // Btn_guardar
             // 
+            this.Btn_guardar.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Btn_guardar.Location = new System.Drawing.Point(288, 102);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(75, 33);
             this.Btn_guardar.TabIndex = 3;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = true;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
+            this.Btn_guardar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_guardar_MouseClick);
             // 
             // Btn_cancelar
             // 
-            this.Btn_cancelar.Location = new System.Drawing.Point(197, 102);
+            this.Btn_cancelar.Location = new System.Drawing.Point(191, 102);
             this.Btn_cancelar.Name = "Btn_cancelar";
-            this.Btn_cancelar.Size = new System.Drawing.Size(75, 33);
+            this.Btn_cancelar.Size = new System.Drawing.Size(81, 33);
             this.Btn_cancelar.TabIndex = 2;
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Txt_descripcion_ca
             // 
@@ -170,6 +176,7 @@
             this.Btn_nuevo.TabIndex = 1;
             this.Btn_nuevo.Text = "Nuevo";
             this.Btn_nuevo.UseVisualStyleBackColor = true;
+            this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // Btn_actualizar
             // 
@@ -179,6 +186,7 @@
             this.Btn_actualizar.TabIndex = 2;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // Btn_eliminar
             // 
@@ -207,6 +215,16 @@
             this.Btn_salir.Text = "Salir";
             this.Btn_salir.UseVisualStyleBackColor = true;
             // 
+            // Btn_retornar
+            // 
+            this.Btn_retornar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Btn_retornar.Location = new System.Drawing.Point(379, 102);
+            this.Btn_retornar.Name = "Btn_retornar";
+            this.Btn_retornar.Size = new System.Drawing.Size(75, 33);
+            this.Btn_retornar.TabIndex = 4;
+            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.UseVisualStyleBackColor = true;
+            // 
             // Frm_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,11 +235,12 @@
             this.Controls.Add(this.Btn_eliminar);
             this.Controls.Add(this.Btn_actualizar);
             this.Controls.Add(this.Btn_nuevo);
-            this.Controls.Add(this.Tbp_principal);
+            this.Controls.Add(this.Tbc_principal);
             this.Name = "Frm_Categorias";
             this.Text = " ";
             this.Load += new System.EventHandler(this.Frm_Categorias_Load);
-            this.Tbp_principal.ResumeLayout(false);
+            this.Click += new System.EventHandler(this.Frm_Categorias_Click);
+            this.Tbc_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).EndInit();
@@ -233,7 +252,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl Tbp_principal;
+        private System.Windows.Forms.TabControl Tbc_principal;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TextBox Txt_buscar;
         private System.Windows.Forms.Label label1;
@@ -249,5 +268,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_guardar;
         private System.Windows.Forms.Button Btn_cancelar;
+        private System.Windows.Forms.Button Btn_retornar;
     }
 }
