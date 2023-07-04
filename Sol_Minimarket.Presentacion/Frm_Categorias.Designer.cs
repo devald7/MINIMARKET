@@ -35,6 +35,7 @@
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_reporte = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
-            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Tbc_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
@@ -58,7 +58,7 @@
             this.Tbc_principal.Location = new System.Drawing.Point(12, 12);
             this.Tbc_principal.Name = "Tbc_principal";
             this.Tbc_principal.SelectedIndex = 0;
-            this.Tbc_principal.Size = new System.Drawing.Size(740, 260);
+            this.Tbc_principal.Size = new System.Drawing.Size(802, 294);
             this.Tbc_principal.TabIndex = 0;
             // 
             // tabPage1
@@ -70,7 +70,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(732, 231);
+            this.tabPage1.Size = new System.Drawing.Size(794, 265);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -80,13 +80,14 @@
             this.Dgv_principal.AllowUserToAddRows = false;
             this.Dgv_principal.AllowUserToDeleteRows = false;
             this.Dgv_principal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dgv_principal.Location = new System.Drawing.Point(74, 59);
+            this.Dgv_principal.Location = new System.Drawing.Point(74, 65);
             this.Dgv_principal.Name = "Dgv_principal";
             this.Dgv_principal.ReadOnly = true;
             this.Dgv_principal.RowHeadersWidth = 51;
             this.Dgv_principal.RowTemplate.Height = 24;
-            this.Dgv_principal.Size = new System.Drawing.Size(489, 127);
+            this.Dgv_principal.Size = new System.Drawing.Size(623, 165);
             this.Dgv_principal.TabIndex = 3;
+            this.Dgv_principal.DoubleClick += new System.EventHandler(this.Dgv_principal_DoubleClick);
             // 
             // Btn_buscar
             // 
@@ -129,6 +130,17 @@
             this.tabPage2.Text = "Mantenimiento";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // Btn_retornar
+            // 
+            this.Btn_retornar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Btn_retornar.Location = new System.Drawing.Point(379, 102);
+            this.Btn_retornar.Name = "Btn_retornar";
+            this.Btn_retornar.Size = new System.Drawing.Size(75, 33);
+            this.Btn_retornar.TabIndex = 4;
+            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.UseVisualStyleBackColor = true;
+            this.Btn_retornar.Click += new System.EventHandler(this.Btn_retornar_Click);
+            // 
             // Btn_guardar
             // 
             this.Btn_guardar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -155,8 +167,10 @@
             // 
             this.Txt_descripcion_ca.Location = new System.Drawing.Point(166, 62);
             this.Txt_descripcion_ca.Name = "Txt_descripcion_ca";
+            this.Txt_descripcion_ca.ReadOnly = true;
             this.Txt_descripcion_ca.Size = new System.Drawing.Size(228, 22);
             this.Txt_descripcion_ca.TabIndex = 1;
+            this.Txt_descripcion_ca.TextChanged += new System.EventHandler(this.Txt_descripcion_ca_TextChanged);
             // 
             // label2
             // 
@@ -170,9 +184,9 @@
             // 
             // Btn_nuevo
             // 
-            this.Btn_nuevo.Location = new System.Drawing.Point(31, 278);
+            this.Btn_nuevo.Location = new System.Drawing.Point(42, 312);
             this.Btn_nuevo.Name = "Btn_nuevo";
-            this.Btn_nuevo.Size = new System.Drawing.Size(85, 63);
+            this.Btn_nuevo.Size = new System.Drawing.Size(113, 73);
             this.Btn_nuevo.TabIndex = 1;
             this.Btn_nuevo.Text = "Nuevo";
             this.Btn_nuevo.UseVisualStyleBackColor = true;
@@ -180,9 +194,9 @@
             // 
             // Btn_actualizar
             // 
-            this.Btn_actualizar.Location = new System.Drawing.Point(122, 278);
+            this.Btn_actualizar.Location = new System.Drawing.Point(157, 312);
             this.Btn_actualizar.Name = "Btn_actualizar";
-            this.Btn_actualizar.Size = new System.Drawing.Size(85, 63);
+            this.Btn_actualizar.Size = new System.Drawing.Size(113, 73);
             this.Btn_actualizar.TabIndex = 2;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
@@ -190,46 +204,36 @@
             // 
             // Btn_eliminar
             // 
-            this.Btn_eliminar.Location = new System.Drawing.Point(213, 278);
+            this.Btn_eliminar.Location = new System.Drawing.Point(271, 312);
             this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(85, 63);
+            this.Btn_eliminar.Size = new System.Drawing.Size(113, 73);
             this.Btn_eliminar.TabIndex = 3;
             this.Btn_eliminar.Text = "Eliminar";
             this.Btn_eliminar.UseVisualStyleBackColor = true;
             // 
             // Btn_reporte
             // 
-            this.Btn_reporte.Location = new System.Drawing.Point(304, 278);
+            this.Btn_reporte.Location = new System.Drawing.Point(502, 312);
             this.Btn_reporte.Name = "Btn_reporte";
-            this.Btn_reporte.Size = new System.Drawing.Size(85, 63);
+            this.Btn_reporte.Size = new System.Drawing.Size(113, 73);
             this.Btn_reporte.TabIndex = 4;
             this.Btn_reporte.Text = "Reporte";
             this.Btn_reporte.UseVisualStyleBackColor = true;
             // 
             // Btn_salir
             // 
-            this.Btn_salir.Location = new System.Drawing.Point(395, 278);
+            this.Btn_salir.Location = new System.Drawing.Point(684, 312);
             this.Btn_salir.Name = "Btn_salir";
-            this.Btn_salir.Size = new System.Drawing.Size(85, 63);
+            this.Btn_salir.Size = new System.Drawing.Size(113, 73);
             this.Btn_salir.TabIndex = 5;
             this.Btn_salir.Text = "Salir";
             this.Btn_salir.UseVisualStyleBackColor = true;
-            // 
-            // Btn_retornar
-            // 
-            this.Btn_retornar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Btn_retornar.Location = new System.Drawing.Point(379, 102);
-            this.Btn_retornar.Name = "Btn_retornar";
-            this.Btn_retornar.Size = new System.Drawing.Size(75, 33);
-            this.Btn_retornar.TabIndex = 4;
-            this.Btn_retornar.Text = "Retornar";
-            this.Btn_retornar.UseVisualStyleBackColor = true;
             // 
             // Frm_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 353);
+            this.ClientSize = new System.Drawing.Size(849, 421);
             this.Controls.Add(this.Btn_salir);
             this.Controls.Add(this.Btn_reporte);
             this.Controls.Add(this.Btn_eliminar);

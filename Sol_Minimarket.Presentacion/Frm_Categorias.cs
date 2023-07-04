@@ -29,6 +29,7 @@ namespace Sol_Minimarket.Presentacion
 
         }
         #region "Mis variables"
+        int Codigo_ca = 0; 
         int Estadoguarda = 0; //Sin ninguna accion
         #endregion
 
@@ -69,6 +70,19 @@ namespace Sol_Minimarket.Presentacion
             this.Btn_guardar.Visible = lEstado;
             this.Btn_retornar.Visible = !lEstado;
         }
+
+        private void Selecciona_item()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value))) 
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del Sistema",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Codigo_ca =Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                Txt_descripcion_ca.Text =Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+            }
+        }
         #endregion
 
         private void Frm_Categorias_Load(object sender, EventArgs e)
@@ -92,6 +106,7 @@ namespace Sol_Minimarket.Presentacion
             this.Estado_Botonesprincipales(false);
             this.Estado_Botonesprocesos(true);
             Txt_descripcion_ca.Text = "";
+            Txt_descripcion_ca.ReadOnly = false;
             Tbc_principal.SelectedIndex = 1;
             Txt_descripcion_ca.Focus();
 
@@ -100,6 +115,12 @@ namespace Sol_Minimarket.Presentacion
         private void Btn_actualizar_Click(object sender, EventArgs e)
         {
             Estadoguarda = 2; //Actualizar registro
+            this.Estado_Botonesprincipales(false);
+            this.Estado_Botonesprocesos(true);
+            this.Selecciona_item();
+            Tbc_principal.SelectedIndex = 1;
+            Txt_descripcion_ca.ReadOnly = false;
+            Txt_descripcion_ca.Focus();
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
@@ -110,7 +131,27 @@ namespace Sol_Minimarket.Presentacion
             }
             else //Se procederia a registrar la informacion
             {
-
+                E_Categorias oCa = new E_Categorias();
+                string Rpta = "";
+                oCa.Codigo_ca = this.Codigo_ca;
+                oCa.Descripcion_ca = Txt_descripcion_ca.Text.Trim();
+                Rpta = N_Categorias.Guardar_ca(Estadoguarda, oCa);
+                if (Rpta == "OK")
+                {
+                    this.Listado_ca("%");
+                    MessageBox.Show("Los datos han sido guardados correctamente", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Estadoguarda = 0; //Sin ninguna accion
+                    this.Estado_Botonesprincipales(true);
+                    this.Estado_Botonesprocesos(false);
+                    Txt_descripcion_ca.Text = "";
+                    Txt_descripcion_ca.ReadOnly= true;  
+                    Tbc_principal.SelectedIndex= 0;
+                    this.Codigo_ca = 0;
+                }
+                else
+                {
+                    MessageBox.Show(Rpta, "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -118,7 +159,27 @@ namespace Sol_Minimarket.Presentacion
         {
             Estadoguarda = 0; //Sin ninguna accion
             Txt_descripcion_ca.Text = "";
+            Txt_descripcion_ca.ReadOnly = true;
             this.Estado_Botonesprincipales(true);
+            this.Estado_Botonesprocesos(false);
+            Tbc_principal.SelectedIndex = 0;
+        }
+
+        private void Txt_descripcion_ca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dgv_principal_DoubleClick(object sender, EventArgs e)
+        {
+            this.Selecciona_item();
+            this.Estado_Botonesprocesos(false);
+            Tbc_principal.SelectedIndex = 1;
+
+        }
+
+        private void Btn_retornar_Click(object sender, EventArgs e)
+        {
             this.Estado_Botonesprocesos(false);
             Tbc_principal.SelectedIndex = 0;
         }

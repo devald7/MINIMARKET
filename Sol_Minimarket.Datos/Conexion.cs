@@ -18,11 +18,11 @@ namespace Sol_Minimarket.Datos
 
         private Conexion()
         {
-            this.Base = "BD_MINIMARKET";
-            this.Servidor = "siuture\\SQLEXPRESS";
-            this.Usuario = "sistemas";
-            this.Clave = "12345678";
-            this.Seguridad = false;
+            Base = "BD_MINIMARKET";
+            Servidor = "siuture\\SQLEXPRESS";
+            Usuario = "sistemas";
+            Clave = "12345678";
+            Seguridad = false;
         }
 
         public SqlConnection CrearConexion()
@@ -30,14 +30,14 @@ namespace Sol_Minimarket.Datos
             SqlConnection Cadena = new SqlConnection();
             try
             {
-                Cadena.ConnectionString = "Server=" + this.Servidor + "; Database=" + this.Base + ";";
+                Cadena.ConnectionString = "Server=" + Servidor + "; Database=" + Base + ";";
                 if (Seguridad)
                 {
                     Cadena.ConnectionString = Cadena.ConnectionString + "Integrated Security= SSPI";
                 }
                 else
                 {
-                    Cadena.ConnectionString = Cadena.ConnectionString + "User ID="+this.Usuario+"; Password ="+ this.Clave;
+                    Cadena.ConnectionString = Cadena.ConnectionString + "User ID="+Usuario+"; Password ="+ Clave;
                 }
             }
             catch (Exception ex)
